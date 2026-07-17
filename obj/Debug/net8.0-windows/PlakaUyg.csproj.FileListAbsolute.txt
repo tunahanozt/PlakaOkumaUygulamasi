@@ -1,0 +1,63 @@
+C:\Users\tnhoz\source\repos\PlakaUyg\obj\Debug\net8.0-windows\PlakaUyg.csproj.AssemblyReference.cache
+C:\Users\tnhoz\source\repos\PlakaUyg\obj\Debug\net8.0-windows\PlakaOkumaUyg.MainForm.resources
+C:\Users\tnhoz\source\repos\PlakaUyg\obj\Debug\net8.0-windows\PlakaUyg.csproj.GenerateResource.cache
+C:\Users\tnhoz\source\repos\PlakaUyg\obj\Debug\net8.0-windows\PlakaUyg.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\tnhoz\source\repos\PlakaUyg\obj\Debug\net8.0-windows\PlakaUyg.AssemblyInfoInputs.cache
+C:\Users\tnhoz\source\repos\PlakaUyg\obj\Debug\net8.0-windows\PlakaUyg.AssemblyInfo.cs
+C:\Users\tnhoz\source\repos\PlakaUyg\obj\Debug\net8.0-windows\PlakaUyg.csproj.CoreCompileInputs.cache
+C:\Users\tnhoz\source\repos\PlakaUyg\obj\Debug\net8.0-windows\PlakaUyg.sourcelink.json
+C:\Users\tnhoz\source\repos\PlakaUyg\obj\Debug\net8.0-windows\PlakaOkumaUyg.Form1.resources
+C:\Users\tnhoz\copilot-worktrees\PlakaOkumaUygulamasi\tunahanozt-musical-parakeet\obj\Debug\net8.0-windows\PlakaUyg.csproj.AssemblyReference.cache
+C:\Users\tnhoz\copilot-worktrees\PlakaOkumaUygulamasi\tunahanozt-musical-parakeet\obj\Debug\net8.0-windows\PlakaUyg.T.resources
+C:\Users\tnhoz\copilot-worktrees\PlakaOkumaUygulamasi\tunahanozt-musical-parakeet\obj\Debug\net8.0-windows\PlakaUyg.csproj.GenerateResource.cache
+C:\Users\tnhoz\copilot-worktrees\PlakaOkumaUygulamasi\tunahanozt-musical-parakeet\obj\Debug\net8.0-windows\PlakaUyg.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\tnhoz\copilot-worktrees\PlakaOkumaUygulamasi\tunahanozt-musical-parakeet\obj\Debug\net8.0-windows\PlakaUyg.AssemblyInfoInputs.cache
+C:\Users\tnhoz\copilot-worktrees\PlakaOkumaUygulamasi\tunahanozt-musical-parakeet\obj\Debug\net8.0-windows\PlakaUyg.AssemblyInfo.cs
+C:\Users\tnhoz\copilot-worktrees\PlakaOkumaUygulamasi\tunahanozt-musical-parakeet\obj\Debug\net8.0-windows\PlakaUyg.csproj.CoreCompileInputs.cache
+C:\Users\tnhoz\copilot-worktrees\PlakaOkumaUygulamasi\tunahanozt-musical-parakeet\obj\Debug\net8.0-windows\PlakaUyg.sourcelink.json
+C:\Users\tnhoz\copilot-worktrees\PlakaOkumaUygulamasi\tunahanozt-musical-parakeet\bin\Debug\net8.0-windows\PlakaUyg.exe
+C:\Users\tnhoz\copilot-worktrees\PlakaOkumaUygulamasi\tunahanozt-musical-parakeet\bin\Debug\net8.0-windows\PlakaUyg.deps.json
+C:\Users\tnhoz\copilot-worktrees\PlakaOkumaUygulamasi\tunahanozt-musical-parakeet\bin\Debug\net8.0-windows\PlakaUyg.runtimeconfig.json
+C:\Users\tnhoz\copilot-worktrees\PlakaOkumaUygulamasi\tunahanozt-musical-parakeet\bin\Debug\net8.0-windows\PlakaUyg.dll
+C:\Users\tnhoz\copilot-worktrees\PlakaOkumaUygulamasi\tunahanozt-musical-parakeet\bin\Debug\net8.0-windows\PlakaUyg.pdb
+C:\Users\tnhoz\copilot-worktrees\PlakaOkumaUygulamasi\tunahanozt-musical-parakeet\bin\Debug\net8.0-windows\Microsoft.Win32.SystemEvents.dll
+C:\Users\tnhoz\copilot-worktrees\PlakaOkumaUygulamasi\tunahanozt-musical-parakeet\bin\Debug\net8.0-windows\OpenCvSharp.dll
+C:\Users\tnhoz\copilot-worktrees\PlakaOkumaUygulamasi\tunahanozt-musical-parakeet\bin\Debug\net8.0-windows\OpenCvSharp.Extensions.dll
+C:\Users\tnhoz\copilot-worktrees\PlakaOkumaUygulamasi\tunahanozt-musical-parakeet\bin\Debug\net8.0-windows\System.Drawing.Common.dll
+C:\Users\tnhoz\copilot-worktrees\PlakaOkumaUygulamasi\tunahanozt-musical-parakeet\bin\Debug\net8.0-windows\System.Private.Windows.Core.dll
+C:\Users\tnhoz\copilot-worktrees\PlakaOkumaUygulamasi\tunahanozt-musical-parakeet\bin\Debug\net8.0-windows\System.Private.Windows.GdiPlus.dll
+C:\Users\tnhoz\copilot-worktrees\PlakaOkumaUygulamasi\tunahanozt-musical-parakeet\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\tnhoz\copilot-worktrees\PlakaOkumaUygulamasi\tunahanozt-musical-parakeet\obj\Debug\net8.0-windows\PlakaUyg.csproj.Up2Date
+C:\Users\tnhoz\copilot-worktrees\PlakaOkumaUygulamasi\tunahanozt-musical-parakeet\obj\Debug\net8.0-windows\PlakaUyg.dll
+C:\Users\tnhoz\copilot-worktrees\PlakaOkumaUygulamasi\tunahanozt-musical-parakeet\obj\Debug\net8.0-windows\refint\PlakaUyg.dll
+C:\Users\tnhoz\copilot-worktrees\PlakaOkumaUygulamasi\tunahanozt-musical-parakeet\obj\Debug\net8.0-windows\PlakaUyg.pdb
+C:\Users\tnhoz\copilot-worktrees\PlakaOkumaUygulamasi\tunahanozt-musical-parakeet\obj\Debug\net8.0-windows\PlakaUyg.genruntimeconfig.cache
+C:\Users\tnhoz\copilot-worktrees\PlakaOkumaUygulamasi\tunahanozt-musical-parakeet\obj\Debug\net8.0-windows\ref\PlakaUyg.dll
+C:\Users\tnhoz\OneDrive\Belgeler\Kamburluk Projesi\kamburproje\PlakaOkumaUygulamasi\bin\Debug\net8.0-windows\PlakaUyg.exe
+C:\Users\tnhoz\OneDrive\Belgeler\Kamburluk Projesi\kamburproje\PlakaOkumaUygulamasi\bin\Debug\net8.0-windows\PlakaUyg.deps.json
+C:\Users\tnhoz\OneDrive\Belgeler\Kamburluk Projesi\kamburproje\PlakaOkumaUygulamasi\bin\Debug\net8.0-windows\PlakaUyg.runtimeconfig.json
+C:\Users\tnhoz\OneDrive\Belgeler\Kamburluk Projesi\kamburproje\PlakaOkumaUygulamasi\bin\Debug\net8.0-windows\PlakaUyg.dll
+C:\Users\tnhoz\OneDrive\Belgeler\Kamburluk Projesi\kamburproje\PlakaOkumaUygulamasi\bin\Debug\net8.0-windows\PlakaUyg.pdb
+C:\Users\tnhoz\OneDrive\Belgeler\Kamburluk Projesi\kamburproje\PlakaOkumaUygulamasi\bin\Debug\net8.0-windows\Microsoft.Win32.SystemEvents.dll
+C:\Users\tnhoz\OneDrive\Belgeler\Kamburluk Projesi\kamburproje\PlakaOkumaUygulamasi\bin\Debug\net8.0-windows\OpenCvSharp.dll
+C:\Users\tnhoz\OneDrive\Belgeler\Kamburluk Projesi\kamburproje\PlakaOkumaUygulamasi\bin\Debug\net8.0-windows\OpenCvSharp.Extensions.dll
+C:\Users\tnhoz\OneDrive\Belgeler\Kamburluk Projesi\kamburproje\PlakaOkumaUygulamasi\bin\Debug\net8.0-windows\System.Drawing.Common.dll
+C:\Users\tnhoz\OneDrive\Belgeler\Kamburluk Projesi\kamburproje\PlakaOkumaUygulamasi\bin\Debug\net8.0-windows\System.Private.Windows.Core.dll
+C:\Users\tnhoz\OneDrive\Belgeler\Kamburluk Projesi\kamburproje\PlakaOkumaUygulamasi\bin\Debug\net8.0-windows\System.Private.Windows.GdiPlus.dll
+C:\Users\tnhoz\OneDrive\Belgeler\Kamburluk Projesi\kamburproje\PlakaOkumaUygulamasi\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\tnhoz\OneDrive\Belgeler\Kamburluk Projesi\kamburproje\PlakaOkumaUygulamasi\obj\Debug\net8.0-windows\PlakaUyg.csproj.AssemblyReference.cache
+C:\Users\tnhoz\OneDrive\Belgeler\Kamburluk Projesi\kamburproje\PlakaOkumaUygulamasi\obj\Debug\net8.0-windows\PlakaUyg.T.resources
+C:\Users\tnhoz\OneDrive\Belgeler\Kamburluk Projesi\kamburproje\PlakaOkumaUygulamasi\obj\Debug\net8.0-windows\PlakaUyg.csproj.GenerateResource.cache
+C:\Users\tnhoz\OneDrive\Belgeler\Kamburluk Projesi\kamburproje\PlakaOkumaUygulamasi\obj\Debug\net8.0-windows\PlakaUyg.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\tnhoz\OneDrive\Belgeler\Kamburluk Projesi\kamburproje\PlakaOkumaUygulamasi\obj\Debug\net8.0-windows\PlakaUyg.AssemblyInfoInputs.cache
+C:\Users\tnhoz\OneDrive\Belgeler\Kamburluk Projesi\kamburproje\PlakaOkumaUygulamasi\obj\Debug\net8.0-windows\PlakaUyg.AssemblyInfo.cs
+C:\Users\tnhoz\OneDrive\Belgeler\Kamburluk Projesi\kamburproje\PlakaOkumaUygulamasi\obj\Debug\net8.0-windows\PlakaUyg.csproj.CoreCompileInputs.cache
+C:\Users\tnhoz\OneDrive\Belgeler\Kamburluk Projesi\kamburproje\PlakaOkumaUygulamasi\obj\Debug\net8.0-windows\PlakaUyg.sourcelink.json
+C:\Users\tnhoz\OneDrive\Belgeler\Kamburluk Projesi\kamburproje\PlakaOkumaUygulamasi\obj\Debug\net8.0-windows\PlakaUyg.csproj.Up2Date
+C:\Users\tnhoz\OneDrive\Belgeler\Kamburluk Projesi\kamburproje\PlakaOkumaUygulamasi\obj\Debug\net8.0-windows\PlakaUyg.dll
+C:\Users\tnhoz\OneDrive\Belgeler\Kamburluk Projesi\kamburproje\PlakaOkumaUygulamasi\obj\Debug\net8.0-windows\refint\PlakaUyg.dll
+C:\Users\tnhoz\OneDrive\Belgeler\Kamburluk Projesi\kamburproje\PlakaOkumaUygulamasi\obj\Debug\net8.0-windows\PlakaUyg.pdb
+C:\Users\tnhoz\OneDrive\Belgeler\Kamburluk Projesi\kamburproje\PlakaOkumaUygulamasi\obj\Debug\net8.0-windows\PlakaUyg.genruntimeconfig.cache
+C:\Users\tnhoz\OneDrive\Belgeler\Kamburluk Projesi\kamburproje\PlakaOkumaUygulamasi\obj\Debug\net8.0-windows\ref\PlakaUyg.dll
+C:\Users\tnhoz\OneDrive\Belgeler\Kamburluk Projesi\kamburproje\PlakaOkumaUygulamasi\bin\Debug\net8.0-windows\runtimes\win-x64\native\OpenCvSharpExtern.dll
+C:\Users\tnhoz\OneDrive\Belgeler\Kamburluk Projesi\kamburproje\PlakaOkumaUygulamasi\bin\Debug\net8.0-windows\runtimes\win-x64\native\opencv_videoio_ffmpeg4130_64.dll

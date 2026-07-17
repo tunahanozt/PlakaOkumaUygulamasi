@@ -1,0 +1,686 @@
+{
+  "version": 3,
+  "targets": {
+    "net8.0-windows7.0": {
+      "Microsoft.Data.Sqlite/10.0.10": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Data.Sqlite.Core": "10.0.10",
+          "SQLitePCLRaw.bundle_e_sqlite3": "2.1.11",
+          "SQLitePCLRaw.core": "2.1.11"
+        },
+        "compile": {
+          "lib/netstandard2.0/_._": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/_._": {}
+        }
+      },
+      "Microsoft.Data.Sqlite.Core/10.0.10": {
+        "type": "package",
+        "dependencies": {
+          "SQLitePCLRaw.core": "2.1.11"
+        },
+        "compile": {
+          "lib/net8.0/Microsoft.Data.Sqlite.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.Data.Sqlite.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Microsoft.Win32.SystemEvents/10.0.9": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/Microsoft.Win32.SystemEvents.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.Win32.SystemEvents.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net8.0/_._": {}
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/net8.0/Microsoft.Win32.SystemEvents.dll": {
+            "assetType": "runtime",
+            "rid": "win"
+          }
+        }
+      },
+      "OpenCvSharp4/4.13.0.20260627": {
+        "type": "package",
+        "dependencies": {
+          "System.Memory": "4.6.3"
+        },
+        "compile": {
+          "lib/net8.0/OpenCvSharp.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/OpenCvSharp.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "OpenCvSharp4.Extensions/4.13.0.20260627": {
+        "type": "package",
+        "dependencies": {
+          "OpenCvSharp4": "4.13.0.20260627",
+          "System.Drawing.Common": "10.0.9"
+        },
+        "compile": {
+          "lib/net8.0/OpenCvSharp.Extensions.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/OpenCvSharp.Extensions.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "OpenCvSharp4.runtime.win/4.13.0.20260627": {
+        "type": "package",
+        "build": {
+          "build/net8.0/OpenCvSharp4.runtime.win.props": {},
+          "build/net8.0/OpenCvSharp4.runtime.win.targets": {}
+        },
+        "runtimeTargets": {
+          "runtimes/win-x64/native/OpenCvSharpExtern.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/opencv_videoio_ffmpeg4130_64.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          }
+        }
+      },
+      "SQLitePCLRaw.bundle_e_sqlite3/2.1.11": {
+        "type": "package",
+        "dependencies": {
+          "SQLitePCLRaw.lib.e_sqlite3": "2.1.11",
+          "SQLitePCLRaw.provider.e_sqlite3": "2.1.11"
+        },
+        "compile": {
+          "lib/netstandard2.0/SQLitePCLRaw.batteries_v2.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/SQLitePCLRaw.batteries_v2.dll": {}
+        }
+      },
+      "SQLitePCLRaw.core/2.1.11": {
+        "type": "package",
+        "dependencies": {
+          "System.Memory": "4.5.3"
+        },
+        "compile": {
+          "lib/netstandard2.0/SQLitePCLRaw.core.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/SQLitePCLRaw.core.dll": {}
+        }
+      },
+      "SQLitePCLRaw.lib.e_sqlite3/2.1.11": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/_._": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/_._": {}
+        },
+        "build": {
+          "buildTransitive/net8.0/SQLitePCLRaw.lib.e_sqlite3.targets": {}
+        },
+        "runtimeTargets": {
+          "runtimes/browser-wasm/nativeassets/net8.0/e_sqlite3.a": {
+            "assetType": "native",
+            "rid": "browser-wasm"
+          },
+          "runtimes/linux-arm/native/libe_sqlite3.so": {
+            "assetType": "native",
+            "rid": "linux-arm"
+          },
+          "runtimes/linux-arm64/native/libe_sqlite3.so": {
+            "assetType": "native",
+            "rid": "linux-arm64"
+          },
+          "runtimes/linux-armel/native/libe_sqlite3.so": {
+            "assetType": "native",
+            "rid": "linux-armel"
+          },
+          "runtimes/linux-mips64/native/libe_sqlite3.so": {
+            "assetType": "native",
+            "rid": "linux-mips64"
+          },
+          "runtimes/linux-musl-arm/native/libe_sqlite3.so": {
+            "assetType": "native",
+            "rid": "linux-musl-arm"
+          },
+          "runtimes/linux-musl-arm64/native/libe_sqlite3.so": {
+            "assetType": "native",
+            "rid": "linux-musl-arm64"
+          },
+          "runtimes/linux-musl-riscv64/native/libe_sqlite3.so": {
+            "assetType": "native",
+            "rid": "linux-musl-riscv64"
+          },
+          "runtimes/linux-musl-s390x/native/libe_sqlite3.so": {
+            "assetType": "native",
+            "rid": "linux-musl-s390x"
+          },
+          "runtimes/linux-musl-x64/native/libe_sqlite3.so": {
+            "assetType": "native",
+            "rid": "linux-musl-x64"
+          },
+          "runtimes/linux-ppc64le/native/libe_sqlite3.so": {
+            "assetType": "native",
+            "rid": "linux-ppc64le"
+          },
+          "runtimes/linux-riscv64/native/libe_sqlite3.so": {
+            "assetType": "native",
+            "rid": "linux-riscv64"
+          },
+          "runtimes/linux-s390x/native/libe_sqlite3.so": {
+            "assetType": "native",
+            "rid": "linux-s390x"
+          },
+          "runtimes/linux-x64/native/libe_sqlite3.so": {
+            "assetType": "native",
+            "rid": "linux-x64"
+          },
+          "runtimes/linux-x86/native/libe_sqlite3.so": {
+            "assetType": "native",
+            "rid": "linux-x86"
+          },
+          "runtimes/maccatalyst-arm64/native/libe_sqlite3.dylib": {
+            "assetType": "native",
+            "rid": "maccatalyst-arm64"
+          },
+          "runtimes/maccatalyst-x64/native/libe_sqlite3.dylib": {
+            "assetType": "native",
+            "rid": "maccatalyst-x64"
+          },
+          "runtimes/osx-arm64/native/libe_sqlite3.dylib": {
+            "assetType": "native",
+            "rid": "osx-arm64"
+          },
+          "runtimes/osx-x64/native/libe_sqlite3.dylib": {
+            "assetType": "native",
+            "rid": "osx-x64"
+          },
+          "runtimes/win-arm/native/e_sqlite3.dll": {
+            "assetType": "native",
+            "rid": "win-arm"
+          },
+          "runtimes/win-arm64/native/e_sqlite3.dll": {
+            "assetType": "native",
+            "rid": "win-arm64"
+          },
+          "runtimes/win-x64/native/e_sqlite3.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x86/native/e_sqlite3.dll": {
+            "assetType": "native",
+            "rid": "win-x86"
+          }
+        }
+      },
+      "SQLitePCLRaw.provider.e_sqlite3/2.1.11": {
+        "type": "package",
+        "dependencies": {
+          "SQLitePCLRaw.core": "2.1.11"
+        },
+        "compile": {
+          "lib/net6.0-windows7.0/SQLitePCLRaw.provider.e_sqlite3.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0-windows7.0/SQLitePCLRaw.provider.e_sqlite3.dll": {}
+        }
+      },
+      "System.Drawing.Common/10.0.9": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Win32.SystemEvents": "10.0.9"
+        },
+        "compile": {
+          "lib/net8.0/System.Drawing.Common.dll": {
+            "related": ".pdb;.xml"
+          },
+          "lib/net8.0/System.Private.Windows.Core.dll": {
+            "related": ".xml"
+          },
+          "lib/net8.0/System.Private.Windows.GdiPlus.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/System.Drawing.Common.dll": {
+            "related": ".pdb;.xml"
+          },
+          "lib/net8.0/System.Private.Windows.Core.dll": {
+            "related": ".xml"
+          },
+          "lib/net8.0/System.Private.Windows.GdiPlus.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net8.0/_._": {}
+        }
+      },
+      "System.Memory/4.6.3": {
+        "type": "package",
+        "compile": {
+          "lib/netcoreapp2.1/_._": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.1/_._": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Microsoft.Data.Sqlite/10.0.10": {
+      "sha512": "58JwZ39lCvRXHfV5O6RQfbHEDu8ZsXI7weRoVRR4jrGRxxkS+qyeuGrN2xD+9VYEICApYr0iTSL6PuU+DdsvPg==",
+      "type": "package",
+      "path": "microsoft.data.sqlite/10.0.10",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "PACKAGE.md",
+        "lib/netstandard2.0/_._",
+        "microsoft.data.sqlite.10.0.10.nupkg.sha512",
+        "microsoft.data.sqlite.nuspec"
+      ]
+    },
+    "Microsoft.Data.Sqlite.Core/10.0.10": {
+      "sha512": "TPCs0ldm7AWqcKmp6f/Xr+14sat7hx4rHfRlS4RgCURBH2thEWbAKEyX7cCWr63zVJVOJIJZTg2cBiUXa8ys6g==",
+      "type": "package",
+      "path": "microsoft.data.sqlite.core/10.0.10",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "PACKAGE.md",
+        "lib/net8.0/Microsoft.Data.Sqlite.dll",
+        "lib/net8.0/Microsoft.Data.Sqlite.xml",
+        "lib/netstandard2.0/Microsoft.Data.Sqlite.dll",
+        "lib/netstandard2.0/Microsoft.Data.Sqlite.xml",
+        "microsoft.data.sqlite.core.10.0.10.nupkg.sha512",
+        "microsoft.data.sqlite.core.nuspec"
+      ]
+    },
+    "Microsoft.Win32.SystemEvents/10.0.9": {
+      "sha512": "dk5HKolAR9bBxlL4dl6Koaf0s/Q47QApog+/o341LSuvWGW6ig4q5fTsgYG0MrK//l2Slv6mygncMK/8lgXVDg==",
+      "type": "package",
+      "path": "microsoft.win32.systemevents/10.0.9",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "PACKAGE.md",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net461/Microsoft.Win32.SystemEvents.targets",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net8.0/_._",
+        "buildTransitive/netcoreapp2.0/Microsoft.Win32.SystemEvents.targets",
+        "lib/net10.0/Microsoft.Win32.SystemEvents.dll",
+        "lib/net10.0/Microsoft.Win32.SystemEvents.xml",
+        "lib/net462/Microsoft.Win32.SystemEvents.dll",
+        "lib/net462/Microsoft.Win32.SystemEvents.xml",
+        "lib/net8.0/Microsoft.Win32.SystemEvents.dll",
+        "lib/net8.0/Microsoft.Win32.SystemEvents.xml",
+        "lib/net9.0/Microsoft.Win32.SystemEvents.dll",
+        "lib/net9.0/Microsoft.Win32.SystemEvents.xml",
+        "lib/netstandard2.0/Microsoft.Win32.SystemEvents.dll",
+        "lib/netstandard2.0/Microsoft.Win32.SystemEvents.xml",
+        "microsoft.win32.systemevents.10.0.9.nupkg.sha512",
+        "microsoft.win32.systemevents.nuspec",
+        "runtimes/win/lib/net10.0/Microsoft.Win32.SystemEvents.dll",
+        "runtimes/win/lib/net10.0/Microsoft.Win32.SystemEvents.xml",
+        "runtimes/win/lib/net8.0/Microsoft.Win32.SystemEvents.dll",
+        "runtimes/win/lib/net8.0/Microsoft.Win32.SystemEvents.xml",
+        "runtimes/win/lib/net9.0/Microsoft.Win32.SystemEvents.dll",
+        "runtimes/win/lib/net9.0/Microsoft.Win32.SystemEvents.xml",
+        "useSharedDesignerContext.txt"
+      ]
+    },
+    "OpenCvSharp4/4.13.0.20260627": {
+      "sha512": "nYk95jkyYY9f0sF5KqZ3OB1SWkmqsfV7eN0ROiQds/rxpSn0v1G0QIedMbwuqbdPhvQnOIG2DDmpkLnHEJMh8Q==",
+      "type": "package",
+      "path": "opencvsharp4/4.13.0.20260627",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.managed.md",
+        "analyzers/dotnet/cs/OpenCvSharp.Analyzers.dll",
+        "lib/net8.0/OpenCvSharp.dll",
+        "lib/net8.0/OpenCvSharp.xml",
+        "lib/netstandard2.0/OpenCvSharp.dll",
+        "lib/netstandard2.0/OpenCvSharp.xml",
+        "lib/netstandard2.1/OpenCvSharp.dll",
+        "lib/netstandard2.1/OpenCvSharp.xml",
+        "opencvsharp.png",
+        "opencvsharp4.4.13.0.20260627.nupkg.sha512",
+        "opencvsharp4.nuspec"
+      ]
+    },
+    "OpenCvSharp4.Extensions/4.13.0.20260627": {
+      "sha512": "X3dZv/bewNFAGneNYZHMMDEkf6M0HKQBrXIkQYs8nrKrWqJhOSZnyn4bW76CrzCVIDIjAKD27AaaKuQYmzkPOA==",
+      "type": "package",
+      "path": "opencvsharp4.extensions/4.13.0.20260627",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.managed.md",
+        "lib/net8.0/OpenCvSharp.Extensions.dll",
+        "lib/net8.0/OpenCvSharp.Extensions.xml",
+        "lib/netstandard2.0/OpenCvSharp.Extensions.dll",
+        "lib/netstandard2.0/OpenCvSharp.Extensions.xml",
+        "lib/netstandard2.1/OpenCvSharp.Extensions.dll",
+        "lib/netstandard2.1/OpenCvSharp.Extensions.xml",
+        "opencvsharp.png",
+        "opencvsharp4.extensions.4.13.0.20260627.nupkg.sha512",
+        "opencvsharp4.extensions.nuspec"
+      ]
+    },
+    "OpenCvSharp4.runtime.win/4.13.0.20260627": {
+      "sha512": "POIxR+CTpwHJIdam6wd8U2fprWv5QnIUw50jw79WEGb37He3T1h11SdtwSj9p2PLSfrzonMjO2t71wqi5uFsoQ==",
+      "type": "package",
+      "path": "opencvsharp4.runtime.win/4.13.0.20260627",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.runtime.md",
+        "build/net8.0/OpenCvSharp4.runtime.win.props",
+        "build/net8.0/OpenCvSharp4.runtime.win.targets",
+        "build/netcoreapp/OpenCvSharp4.runtime.win.props",
+        "build/netcoreapp/OpenCvSharp4.runtime.win.targets",
+        "build/netstandard/OpenCvSharp4.runtime.win.props",
+        "build/netstandard/OpenCvSharp4.runtime.win.targets",
+        "opencvsharp.png",
+        "opencvsharp4.runtime.win.4.13.0.20260627.nupkg.sha512",
+        "opencvsharp4.runtime.win.nuspec",
+        "runtimes/win-x64/native/OpenCvSharpExtern.dll",
+        "runtimes/win-x64/native/opencv_videoio_ffmpeg4130_64.dll"
+      ]
+    },
+    "SQLitePCLRaw.bundle_e_sqlite3/2.1.11": {
+      "sha512": "DC4nA7yWnf4UZdgJDF+9Mus4/cb0Y3Sfgi3gDnAoKNAIBwzkskNAbNbyu+u4atT0ruVlZNJfwZmwiEwE5oz9LQ==",
+      "type": "package",
+      "path": "sqlitepclraw.bundle_e_sqlite3/2.1.11",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/monoandroid90/SQLitePCLRaw.batteries_v2.dll",
+        "lib/net461/SQLitePCLRaw.batteries_v2.dll",
+        "lib/net6.0-android31.0/SQLitePCLRaw.batteries_v2.dll",
+        "lib/net6.0-android31.0/SQLitePCLRaw.batteries_v2.xml",
+        "lib/net6.0-ios14.0/SQLitePCLRaw.batteries_v2.dll",
+        "lib/net6.0-ios14.2/SQLitePCLRaw.batteries_v2.dll",
+        "lib/net6.0-tvos10.0/SQLitePCLRaw.batteries_v2.dll",
+        "lib/netstandard2.0/SQLitePCLRaw.batteries_v2.dll",
+        "lib/xamarinios10/SQLitePCLRaw.batteries_v2.dll",
+        "sqlitepclraw.bundle_e_sqlite3.2.1.11.nupkg.sha512",
+        "sqlitepclraw.bundle_e_sqlite3.nuspec"
+      ]
+    },
+    "SQLitePCLRaw.core/2.1.11": {
+      "sha512": "PK0GLFkfhZzLQeR3PJf71FmhtHox+U3vcY6ZtswoMjrefkB9k6ErNJEnwXqc5KgXDSjige2XXrezqS39gkpQKA==",
+      "type": "package",
+      "path": "sqlitepclraw.core/2.1.11",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/SQLitePCLRaw.core.dll",
+        "sqlitepclraw.core.2.1.11.nupkg.sha512",
+        "sqlitepclraw.core.nuspec"
+      ]
+    },
+    "SQLitePCLRaw.lib.e_sqlite3/2.1.11": {
+      "sha512": "Ev2ytaXiOlWZ4b3R67GZBsemTINslLD1DCJr2xiacpn4tbapu0Q4dHEzSvZSMnVWeE5nlObU3VZN2p81q3XOYQ==",
+      "type": "package",
+      "path": "sqlitepclraw.lib.e_sqlite3/2.1.11",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "buildTransitive/net461/SQLitePCLRaw.lib.e_sqlite3.targets",
+        "buildTransitive/net6.0/SQLitePCLRaw.lib.e_sqlite3.targets",
+        "buildTransitive/net7.0/SQLitePCLRaw.lib.e_sqlite3.targets",
+        "buildTransitive/net8.0/SQLitePCLRaw.lib.e_sqlite3.targets",
+        "buildTransitive/net9.0/SQLitePCLRaw.lib.e_sqlite3.targets",
+        "lib/net461/_._",
+        "lib/netstandard2.0/_._",
+        "runtimes/browser-wasm/nativeassets/net6.0/e_sqlite3.a",
+        "runtimes/browser-wasm/nativeassets/net7.0/e_sqlite3.a",
+        "runtimes/browser-wasm/nativeassets/net8.0/e_sqlite3.a",
+        "runtimes/browser-wasm/nativeassets/net9.0/e_sqlite3.a",
+        "runtimes/linux-arm/native/libe_sqlite3.so",
+        "runtimes/linux-arm64/native/libe_sqlite3.so",
+        "runtimes/linux-armel/native/libe_sqlite3.so",
+        "runtimes/linux-mips64/native/libe_sqlite3.so",
+        "runtimes/linux-musl-arm/native/libe_sqlite3.so",
+        "runtimes/linux-musl-arm64/native/libe_sqlite3.so",
+        "runtimes/linux-musl-riscv64/native/libe_sqlite3.so",
+        "runtimes/linux-musl-s390x/native/libe_sqlite3.so",
+        "runtimes/linux-musl-x64/native/libe_sqlite3.so",
+        "runtimes/linux-ppc64le/native/libe_sqlite3.so",
+        "runtimes/linux-riscv64/native/libe_sqlite3.so",
+        "runtimes/linux-s390x/native/libe_sqlite3.so",
+        "runtimes/linux-x64/native/libe_sqlite3.so",
+        "runtimes/linux-x86/native/libe_sqlite3.so",
+        "runtimes/maccatalyst-arm64/native/libe_sqlite3.dylib",
+        "runtimes/maccatalyst-x64/native/libe_sqlite3.dylib",
+        "runtimes/osx-arm64/native/libe_sqlite3.dylib",
+        "runtimes/osx-x64/native/libe_sqlite3.dylib",
+        "runtimes/win-arm/native/e_sqlite3.dll",
+        "runtimes/win-arm64/native/e_sqlite3.dll",
+        "runtimes/win-x64/native/e_sqlite3.dll",
+        "runtimes/win-x86/native/e_sqlite3.dll",
+        "runtimes/win10-arm/nativeassets/uap10.0/e_sqlite3.dll",
+        "runtimes/win10-arm64/nativeassets/uap10.0/e_sqlite3.dll",
+        "runtimes/win10-x64/nativeassets/uap10.0/e_sqlite3.dll",
+        "runtimes/win10-x86/nativeassets/uap10.0/e_sqlite3.dll",
+        "sqlitepclraw.lib.e_sqlite3.2.1.11.nupkg.sha512",
+        "sqlitepclraw.lib.e_sqlite3.nuspec"
+      ]
+    },
+    "SQLitePCLRaw.provider.e_sqlite3/2.1.11": {
+      "sha512": "Y/0ZkR+r0Cg3DQFuCl1RBnv/tmxpIZRU3HUvelPw6MVaKHwYYR8YNvgs0vuNuXCMvlyJ+Fh88U1D4tah1tt6qw==",
+      "type": "package",
+      "path": "sqlitepclraw.provider.e_sqlite3/2.1.11",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net6.0-windows7.0/SQLitePCLRaw.provider.e_sqlite3.dll",
+        "lib/net6.0/SQLitePCLRaw.provider.e_sqlite3.dll",
+        "lib/netstandard2.0/SQLitePCLRaw.provider.e_sqlite3.dll",
+        "sqlitepclraw.provider.e_sqlite3.2.1.11.nupkg.sha512",
+        "sqlitepclraw.provider.e_sqlite3.nuspec"
+      ]
+    },
+    "System.Drawing.Common/10.0.9": {
+      "sha512": "ShkEj8jOhklJgrN3SoaVbCcopvqyIgVXHso2/eibQBL7IZxzJjND77UYVlViHqpwPxyQeA67IOut4b41clBkQw==",
+      "type": "package",
+      "path": "system.drawing.common/10.0.9",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "PACKAGE.md",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net461/System.Drawing.Common.targets",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net8.0/_._",
+        "buildTransitive/netcoreapp2.0/System.Drawing.Common.targets",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net10.0/System.Drawing.Common.dll",
+        "lib/net10.0/System.Drawing.Common.pdb",
+        "lib/net10.0/System.Drawing.Common.xml",
+        "lib/net10.0/System.Private.Windows.Core.dll",
+        "lib/net10.0/System.Private.Windows.Core.xml",
+        "lib/net10.0/System.Private.Windows.GdiPlus.dll",
+        "lib/net10.0/System.Private.Windows.GdiPlus.xml",
+        "lib/net462/System.Drawing.Common.dll",
+        "lib/net462/System.Drawing.Common.pdb",
+        "lib/net462/System.Drawing.Common.xml",
+        "lib/net8.0/System.Drawing.Common.dll",
+        "lib/net8.0/System.Drawing.Common.pdb",
+        "lib/net8.0/System.Drawing.Common.xml",
+        "lib/net8.0/System.Private.Windows.Core.dll",
+        "lib/net8.0/System.Private.Windows.Core.xml",
+        "lib/net8.0/System.Private.Windows.GdiPlus.dll",
+        "lib/net8.0/System.Private.Windows.GdiPlus.xml",
+        "lib/net9.0/System.Drawing.Common.dll",
+        "lib/net9.0/System.Drawing.Common.pdb",
+        "lib/net9.0/System.Drawing.Common.xml",
+        "lib/net9.0/System.Private.Windows.Core.dll",
+        "lib/net9.0/System.Private.Windows.Core.xml",
+        "lib/net9.0/System.Private.Windows.GdiPlus.dll",
+        "lib/net9.0/System.Private.Windows.GdiPlus.xml",
+        "lib/netstandard2.0/System.Drawing.Common.dll",
+        "lib/netstandard2.0/System.Drawing.Common.pdb",
+        "lib/netstandard2.0/System.Drawing.Common.xml",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "system.drawing.common.10.0.9.nupkg.sha512",
+        "system.drawing.common.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
+    "System.Memory/4.6.3": {
+      "sha512": "qdcDOgnFZY40+Q9876JUHnlHu7bosOHX8XISRoH94fwk6hgaeQGSgfZd8srWRZNt5bV9ZW2TljcegDNxsf+96A==",
+      "type": "package",
+      "path": "system.memory/4.6.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "PACKAGE.md",
+        "buildTransitive/net461/System.Memory.targets",
+        "buildTransitive/net462/_._",
+        "lib/net462/System.Memory.dll",
+        "lib/net462/System.Memory.xml",
+        "lib/netcoreapp2.1/_._",
+        "lib/netstandard2.0/System.Memory.dll",
+        "lib/netstandard2.0/System.Memory.xml",
+        "lib/netstandard2.1/_._",
+        "system.memory.4.6.3.nupkg.sha512",
+        "system.memory.nuspec"
+      ]
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net8.0-windows7.0": [
+      "Microsoft.Data.Sqlite >= 10.0.10",
+      "OpenCvSharp4 >= 4.13.0.20260627",
+      "OpenCvSharp4.Extensions >= 4.13.0.20260627",
+      "OpenCvSharp4.runtime.win >= 4.13.0.20260627"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\tnhoz\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\Users\\tnhoz\\OneDrive\\Belgeler\\Kamburluk Projesi\\kamburproje\\PlakaOkumaUygulamasi\\PlakaUyg.csproj",
+      "projectName": "PlakaUyg",
+      "projectPath": "C:\\Users\\tnhoz\\OneDrive\\Belgeler\\Kamburluk Projesi\\kamburproje\\PlakaOkumaUygulamasi\\PlakaUyg.csproj",
+      "packagesPath": "C:\\Users\\tnhoz\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\tnhoz\\OneDrive\\Belgeler\\Kamburluk Projesi\\kamburproje\\PlakaOkumaUygulamasi\\obj\\",
+      "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
+      "configFilePaths": [
+        "C:\\Users\\tnhoz\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net8.0-windows"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net8.0-windows7.0": {
+          "targetAlias": "net8.0-windows",
+          "projectReferences": {}
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
+      },
+      "SdkAnalysisLevel": "9.0.300"
+    },
+    "frameworks": {
+      "net8.0-windows7.0": {
+        "targetAlias": "net8.0-windows",
+        "dependencies": {
+          "Microsoft.Data.Sqlite": {
+            "target": "Package",
+            "version": "[10.0.10, )"
+          },
+          "OpenCvSharp4": {
+            "target": "Package",
+            "version": "[4.13.0.20260627, )"
+          },
+          "OpenCvSharp4.Extensions": {
+            "target": "Package",
+            "version": "[4.13.0.20260627, )"
+          },
+          "OpenCvSharp4.runtime.win": {
+            "target": "Package",
+            "version": "[4.13.0.20260627, )"
+          }
+        },
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          },
+          "Microsoft.WindowsDesktop.App.WindowsForms": {
+            "privateAssets": "none"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.316/PortableRuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}
