@@ -53,7 +53,11 @@ namespace PlakaUyg
         }
 
         // ── Plakalar ──────────────────────────────────────────────────────────
-
+        public void ClearDetections()
+        {
+            using var con = Open();
+            Exec(con, "DELETE FROM detections");
+        }
         public bool AddPlate(string plate, string? owner, string? type, string? notes)
         {
             var p = plate.Trim().ToUpperInvariant();
@@ -174,12 +178,6 @@ namespace PlakaUyg
                     r.GetInt32(2) == 1, r.GetInt32(3) == 1,
                     r.IsDBNull(4) ? null : r.GetString(4), r.GetString(5)));
             return list;
-        }
-
-        public void ClearDetections()
-        {
-            using var con = Open();
-            Exec(con, "DELETE FROM detections");
         }
 
         public DbStats GetStats()

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "rrQgL+tzoi8=",
+  "dgSpecHash": "A0TKGfyX3mU=",
   "success": true,
-  "projectFilePath": "C:\\Users\\tnhoz\\OneDrive\\Belgeler\\Kamburluk Projesi\\kamburproje\\PlakaOkumaUygulamasi\\PlakaUyg.csproj",
+  "projectFilePath": "C:\\Users\\tnhoz\\source\\repos\\PlakaOkumaSistemi\\PlakaUyg.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\tnhoz\\.nuget\\packages\\microsoft.data.sqlite\\10.0.10\\microsoft.data.sqlite.10.0.10.nupkg.sha512",
     "C:\\Users\\tnhoz\\.nuget\\packages\\microsoft.data.sqlite.core\\10.0.10\\microsoft.data.sqlite.core.10.0.10.nupkg.sha512",

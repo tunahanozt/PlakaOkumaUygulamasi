@@ -1,22 +1,34 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\tnhoz\\OneDrive\\Belgeler\\Kamburluk Projesi\\kamburproje\\PlakaOkumaUygulamasi\\",
+  "WorkspaceRootPath": "C:\\Users\\tnhoz\\source\\repos\\PlakaOkumaSistemi\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3A26855E-B0C8-44D1-8652-5C1D068A3D51}|PlakaUyg.csproj|c:\\users\\tnhoz\\onedrive\\belgeler\\kamburluk projesi\\kamburproje\\plakaokumauygulamasi\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3A26855E-B0C8-44D1-8652-5C1D068A3D51}|PlakaUyg.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3A26855E-B0C8-44D1-8652-5C1D068A3D51}|PlakaUyg.csproj|c:\\users\\tnhoz\\source\\repos\\plakaokumasistemi\\form1.ui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3A26855E-B0C8-44D1-8652-5C1D068A3D51}|PlakaUyg.csproj|solutionrelative:form1.ui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3A26855E-B0C8-44D1-8652-5C1D068A3D51}|PlakaUyg.csproj|c:\\users\\tnhoz\\onedrive\\belgeler\\kamburluk projesi\\kamburproje\\plakaokumauygulamasi\\databaseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{3A26855E-B0C8-44D1-8652-5C1D068A3D51}|PlakaUyg.csproj|c:\\users\\tnhoz\\source\\repos\\plakaokumasistemi\\databaseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3A26855E-B0C8-44D1-8652-5C1D068A3D51}|PlakaUyg.csproj|solutionrelative:databaseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3A26855E-B0C8-44D1-8652-5C1D068A3D51}|PlakaUyg.csproj|c:\\users\\tnhoz\\onedrive\\belgeler\\kamburluk projesi\\kamburproje\\plakaokumauygulamasi\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3A26855E-B0C8-44D1-8652-5C1D068A3D51}|PlakaUyg.csproj|solutionrelative:form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3A26855E-B0C8-44D1-8652-5C1D068A3D51}|PlakaUyg.csproj|c:\\users\\tnhoz\\source\\repos\\plakaokumasistemi\\form1.events.cs||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{3A26855E-B0C8-44D1-8652-5C1D068A3D51}|PlakaUyg.csproj|solutionrelative:form1.events.cs||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3A26855E-B0C8-44D1-8652-5C1D068A3D51}|PlakaUyg.csproj|c:\\users\\tnhoz\\onedrive\\belgeler\\kamburluk projesi\\kamburproje\\plakaokumauygulamasi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{3A26855E-B0C8-44D1-8652-5C1D068A3D51}|PlakaUyg.csproj|c:\\users\\tnhoz\\source\\repos\\plakaokumasistemi\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3A26855E-B0C8-44D1-8652-5C1D068A3D51}|PlakaUyg.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3A26855E-B0C8-44D1-8652-5C1D068A3D51}|PlakaUyg.csproj|c:\\users\\tnhoz\\source\\repos\\plakaokumasistemi\\theme.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3A26855E-B0C8-44D1-8652-5C1D068A3D51}|PlakaUyg.csproj|solutionrelative:theme.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3A26855E-B0C8-44D1-8652-5C1D068A3D51}|PlakaUyg.csproj|c:\\users\\tnhoz\\source\\repos\\plakaokumasistemi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3A26855E-B0C8-44D1-8652-5C1D068A3D51}|PlakaUyg.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3A26855E-B0C8-44D1-8652-5C1D068A3D51}|PlakaUyg.csproj|c:\\users\\tnhoz\\source\\repos\\plakaokumasistemi\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3A26855E-B0C8-44D1-8652-5C1D068A3D51}|PlakaUyg.csproj|solutionrelative:form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,68 +38,106 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\tnhoz\\OneDrive\\Belgeler\\Kamburluk Projesi\\kamburproje\\PlakaOkumaUygulamasi\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\tnhoz\\source\\repos\\PlakaOkumaSistemi\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\tnhoz\\OneDrive\\Belgeler\\Kamburluk Projesi\\kamburproje\\PlakaOkumaUygulamasi\\Program.cs",
+              "ToolTip": "C:\\Users\\tnhoz\\source\\repos\\PlakaOkumaSistemi\\Program.cs",
               "RelativeToolTip": "Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-07-17T11:33:27.097Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "DatabaseService.cs",
-              "DocumentMoniker": "C:\\Users\\tnhoz\\OneDrive\\Belgeler\\Kamburluk Projesi\\kamburproje\\PlakaOkumaUygulamasi\\DatabaseService.cs",
-              "RelativeDocumentMoniker": "DatabaseService.cs",
-              "ToolTip": "C:\\Users\\tnhoz\\OneDrive\\Belgeler\\Kamburluk Projesi\\kamburproje\\PlakaOkumaUygulamasi\\DatabaseService.cs",
-              "RelativeToolTip": "DatabaseService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAABMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-17T18:06:18.345Z",
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
             },
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{56df62a4-05a3-4e5b-aa1a-99371ccfb997}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Form1.Events.cs",
+              "DocumentMoniker": "C:\\Users\\tnhoz\\source\\repos\\PlakaOkumaSistemi\\Form1.Events.cs",
+              "RelativeDocumentMoniker": "Form1.Events.cs",
+              "ToolTip": "C:\\Users\\tnhoz\\source\\repos\\PlakaOkumaSistemi\\Form1.Events.cs",
+              "RelativeToolTip": "Form1.Events.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-18T09:50:54.141Z",
+              "EditorCaption": ""
+            },
+            {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Form1.UI.cs",
+              "DocumentMoniker": "C:\\Users\\tnhoz\\source\\repos\\PlakaOkumaSistemi\\Form1.UI.cs",
+              "RelativeDocumentMoniker": "Form1.UI.cs",
+              "ToolTip": "C:\\Users\\tnhoz\\source\\repos\\PlakaOkumaSistemi\\Form1.UI.cs",
+              "RelativeToolTip": "Form1.UI.cs",
+              "ViewState": "AgIAAEgBAAAAAAAAAADwv2sBAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-18T09:50:29.279Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Theme.cs",
+              "DocumentMoniker": "C:\\Users\\tnhoz\\source\\repos\\PlakaOkumaSistemi\\Theme.cs",
+              "RelativeDocumentMoniker": "Theme.cs",
+              "ToolTip": "C:\\Users\\tnhoz\\source\\repos\\PlakaOkumaSistemi\\Theme.cs",
+              "RelativeToolTip": "Theme.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-18T09:49:40.31Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "DatabaseService.cs",
+              "DocumentMoniker": "C:\\Users\\tnhoz\\source\\repos\\PlakaOkumaSistemi\\DatabaseService.cs",
+              "RelativeDocumentMoniker": "DatabaseService.cs",
+              "ToolTip": "C:\\Users\\tnhoz\\source\\repos\\PlakaOkumaSistemi\\DatabaseService.cs",
+              "RelativeToolTip": "DatabaseService.cs",
+              "ViewState": "AgIAAJoAAAAAAAAAAAAcwMEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-17T18:06:18.345Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "Form1.cs",
-              "DocumentMoniker": "C:\\Users\\tnhoz\\OneDrive\\Belgeler\\Kamburluk Projesi\\kamburproje\\PlakaOkumaUygulamasi\\Form1.cs",
+              "DocumentMoniker": "C:\\Users\\tnhoz\\source\\repos\\PlakaOkumaSistemi\\Form1.cs",
               "RelativeDocumentMoniker": "Form1.cs",
-              "ToolTip": "C:\\Users\\tnhoz\\OneDrive\\Belgeler\\Kamburluk Projesi\\kamburproje\\PlakaOkumaUygulamasi\\Form1.cs",
+              "ToolTip": "C:\\Users\\tnhoz\\source\\repos\\PlakaOkumaSistemi\\Form1.cs",
               "RelativeToolTip": "Form1.cs",
-              "ViewState": "AgIAAHYBAAAAAAAAAAAawHoBAAAbAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-07-17T12:03:10.001Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 6,
               "Title": "Form1.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\tnhoz\\OneDrive\\Belgeler\\Kamburluk Projesi\\kamburproje\\PlakaOkumaUygulamasi\\Form1.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\tnhoz\\source\\repos\\PlakaOkumaSistemi\\Form1.Designer.cs",
               "RelativeDocumentMoniker": "Form1.Designer.cs",
-              "ToolTip": "C:\\Users\\tnhoz\\OneDrive\\Belgeler\\Kamburluk Projesi\\kamburproje\\PlakaOkumaUygulamasi\\Form1.Designer.cs",
+              "ToolTip": "C:\\Users\\tnhoz\\source\\repos\\PlakaOkumaSistemi\\Form1.Designer.cs",
               "RelativeToolTip": "Form1.Designer.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-07-17T11:32:40.162Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{56df62a4-05a3-4e5b-aa1a-99371ccfb997}"
             }
           ]
         }

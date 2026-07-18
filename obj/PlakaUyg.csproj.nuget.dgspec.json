@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\tnhoz\\OneDrive\\Belgeler\\Kamburluk Projesi\\kamburproje\\PlakaOkumaUygulamasi\\PlakaUyg.csproj": {}
+    "C:\\Users\\tnhoz\\source\\repos\\PlakaOkumaSistemi\\PlakaUyg.csproj": {}
   },
   "projects": {
-    "C:\\Users\\tnhoz\\OneDrive\\Belgeler\\Kamburluk Projesi\\kamburproje\\PlakaOkumaUygulamasi\\PlakaUyg.csproj": {
+    "C:\\Users\\tnhoz\\source\\repos\\PlakaOkumaSistemi\\PlakaUyg.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\tnhoz\\OneDrive\\Belgeler\\Kamburluk Projesi\\kamburproje\\PlakaOkumaUygulamasi\\PlakaUyg.csproj",
+        "projectUniqueName": "C:\\Users\\tnhoz\\source\\repos\\PlakaOkumaSistemi\\PlakaUyg.csproj",
         "projectName": "PlakaUyg",
-        "projectPath": "C:\\Users\\tnhoz\\OneDrive\\Belgeler\\Kamburluk Projesi\\kamburproje\\PlakaOkumaUygulamasi\\PlakaUyg.csproj",
+        "projectPath": "C:\\Users\\tnhoz\\source\\repos\\PlakaOkumaSistemi\\PlakaUyg.csproj",
         "packagesPath": "C:\\Users\\tnhoz\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\tnhoz\\OneDrive\\Belgeler\\Kamburluk Projesi\\kamburproje\\PlakaOkumaUygulamasi\\obj\\",
+        "outputPath": "C:\\Users\\tnhoz\\source\\repos\\PlakaOkumaSistemi\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
