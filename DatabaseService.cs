@@ -24,31 +24,31 @@ namespace PlakaUyg
             using var con = Open();
             Exec(con, @"
                 CREATE TABLE IF NOT EXISTS plates (
-                    id           INTEGER PRIMARY KEY AUTOINCREMENT,
-                    plate        TEXT NOT NULL UNIQUE COLLATE NOCASE,
-                    owner_name   TEXT,
+                    id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    plate TEXT NOT NULL UNIQUE COLLATE NOCASE,
+                    owner_name TEXT,
                     vehicle_type TEXT,
-                    notes        TEXT,
-                    is_active    INTEGER NOT NULL DEFAULT 1,
-                    created_at   TEXT NOT NULL DEFAULT (datetime('now','localtime')),
-                    updated_at   TEXT NOT NULL DEFAULT (datetime('now','localtime'))
+                    notes TEXT,
+                    is_active INTEGER NOT NULL DEFAULT 1,
+                    created_at TEXT NOT NULL DEFAULT (datetime('now','localtime')),
+                    updated_at TEXT NOT NULL DEFAULT (datetime('now','localtime'))
                 );
                 CREATE TABLE IF NOT EXISTS blacklist (
-                    id        INTEGER PRIMARY KEY AUTOINCREMENT,
-                    plate     TEXT NOT NULL UNIQUE COLLATE NOCASE,
-                    reason    TEXT,
-                    added_at  TEXT NOT NULL DEFAULT (datetime('now','localtime'))
+                    id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    plate TEXT NOT NULL UNIQUE COLLATE NOCASE,
+                    reason TEXT,
+                    added_at TEXT NOT NULL DEFAULT (datetime('now','localtime'))
                 );
                 CREATE TABLE IF NOT EXISTS detections (
-                    id             INTEGER PRIMARY KEY AUTOINCREMENT,
-                    plate          TEXT NOT NULL,
-                    is_found       INTEGER NOT NULL,
+                    id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    plate TEXT NOT NULL,
+                    is_found INTEGER NOT NULL,
                     is_blacklisted INTEGER NOT NULL DEFAULT 0,
-                    source         TEXT,
-                    detected_at    TEXT NOT NULL DEFAULT (datetime('now','localtime'))
+                    source TEXT,
+                    detected_at TEXT NOT NULL DEFAULT (datetime('now','localtime'))
                 );
                 CREATE INDEX IF NOT EXISTS idx_det_plate ON detections(plate);
-                CREATE INDEX IF NOT EXISTS idx_det_date  ON detections(detected_at);
+                CREATE INDEX IF NOT EXISTS idx_det_date ON detections(detected_at);
             ");
         }
 
@@ -58,6 +58,7 @@ namespace PlakaUyg
             using var con = Open();
             Exec(con, "DELETE FROM detections");
         }
+
         public bool AddPlate(string plate, string? owner, string? type, string? notes)
         {
             var p = plate.Trim().ToUpperInvariant();
@@ -70,6 +71,42 @@ namespace PlakaUyg
                 return true;
             }
             catch { return false; }
+        }
+
+        // YENİ: mevcut bir plakanın sahip/araç tipi/not bilgilerini günceller.
+        public bool UpdatePlate(string plate, string? owner, string? type, string? notes)
+        {
+            var p = plate.Trim();
+            if (string.IsNullOrEmpty(p)) return false;
+            using var con = Open();
+            try
+            {
+                Exec(con, @"UPDATE plates
+                            SET owner_name=@o, vehicle_type=@t, notes=@n, updated_at=datetime('now','localtime')
+                            WHERE plate=@p COLLATE NOCASE",
+                    ("@p", p), ("@o", owner), ("@t", type), ("@n", notes));
+                return true;
+            }
+            catch { return false; }
+        }
+
+        // YENİ: tek bir plaka kaydını (varsa) getirir. Form üzerinde düzenleme alanlarını
+        // doldurmak için kullanılıyor.
+        public PlateRecord? GetPlate(string plate)
+        {
+            if (string.IsNullOrWhiteSpace(plate)) return null;
+            using var con = Open();
+            using var cmd = new SqliteCommand(
+                "SELECT id,plate,owner_name,vehicle_type,notes,is_active,created_at FROM plates WHERE plate=@p COLLATE NOCASE", con);
+            cmd.Parameters.AddWithValue("@p", plate.Trim());
+            using var r = cmd.ExecuteReader();
+            if (!r.Read()) return null;
+            return new PlateRecord(
+                r.GetInt32(0), r.GetString(1),
+                r.IsDBNull(2) ? null : r.GetString(2),
+                r.IsDBNull(3) ? null : r.GetString(3),
+                r.IsDBNull(4) ? null : r.GetString(4),
+                r.GetInt32(5) == 1, r.GetString(6));
         }
 
         public bool RemovePlate(string plate)
@@ -109,7 +146,6 @@ namespace PlakaUyg
         }
 
         // ── Kara Liste ────────────────────────────────────────────────────────
-
         public bool AddToBlacklist(string plate, string? reason)
         {
             var p = plate.Trim().ToUpperInvariant();
@@ -157,7 +193,6 @@ namespace PlakaUyg
         }
 
         // ── Tespitler ─────────────────────────────────────────────────────────
-
         public void LogDetection(string plate, bool found, bool blacklisted, string? source)
         {
             using var con = Open();
@@ -191,7 +226,6 @@ namespace PlakaUyg
         }
 
         // ── Yardımcılar ───────────────────────────────────────────────────────
-
         private SqliteConnection Open()
         {
             var c = new SqliteConnection(_conn);

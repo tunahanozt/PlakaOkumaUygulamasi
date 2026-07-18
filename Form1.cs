@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Windows.Forms;
@@ -14,10 +15,8 @@ namespace PlakaUyg
         // ── DLL bağlantısı ────────────────────────────────────────────────────
         [DllImport("main.cpp.dll", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
         private static extern bool InitSystem(string det, string ocr);
-
         [DllImport("main.cpp.dll", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
         private static extern void ProcessFrame(IntPtr data, int w, int h, StringBuilder buf);
-
         [DllImport("main.cpp.dll", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
         private static extern void CleanupSystem();
 
@@ -31,8 +30,27 @@ namespace PlakaUyg
         private readonly List<LogEntry> _log = new();
         private readonly List<(string plate, int x, int y, int w, int h)> _dets = new();
         private string _videoPath = "";
-        private string _detectEng = "plaka_tespit_v0.2.engine";
-        private string _ocrEng = "plaka_okuma_v0.2.engine";
+
+        // ── Okuma doğrulama (stabilizasyon) ────────────────────────────────────
+        // OCR kare kare küçük farklarla okuyabildiği için, bir plakayı "kesinleşti"
+        // sayıp loglamadan/göstermeden önce art arda aynı sonucu birkaç kare
+        // boyunca almasını bekliyoruz. Bu, "deniyor deniyor" şeklindeki gürültülü
+        // tekrar tetiklenmeleri önler.
+        private const int ConfirmFrames = 6;           // kaç ardışık karede aynı okuma gelirse onaylansın
+        private static readonly TimeSpan ReconfirmCooldown = TimeSpan.FromSeconds(4); // aynı plaka için tekrar bildirim aralığı
+        private string _pendingPlate = "";
+        private int _pendingCount = 0;
+        private string _confirmedPlate = "";
+        private DateTime _lastConfirmAt = DateTime.MinValue;
+
+        // Motor (.engine) dosyalarının bulunduğu sabit klasör. Uygulama açılışta
+        // buradaki dosyaları otomatik yükler; kullanıcı her seferinde
+        // "Motor Ayarları"ndan yol seçmek zorunda kalmaz.
+        private static readonly string EngineDir =
+            @"C:\Users\tnhoz\source\repos\PlakaOkumaSistemi\bin\Debug\net8.0-windows";
+
+        private string _detectEng = Path.Combine(EngineDir, "plaka_tespit_v0.2.engine");
+        private string _ocrEng = Path.Combine(EngineDir, "plaka_okuma_v0.2.engine");
 
         public Form1()
         {
@@ -40,12 +58,17 @@ namespace PlakaUyg
             BuildUi();
             WireEvents();
             RefreshList();
+            RefreshBlacklist();
+
+            // Açılışta motorları sessizce (hata penceresi göstermeden) yüklemeyi dene.
+            // Dosyalar sabit klasörde bulunamazsa üstteki durum etiketi kırmızı kalır,
+            // kullanıcı isterse "⚙ Motor Ayarları"ndan farklı bir yol seçebilir.
+            InitDll(silent: true);
         }
 
         // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
         // KAMERA VE DLL YÖNETİMİ
         // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
         private void StartPressed()
         {
             using var dlg = new OpenFileDialog
@@ -54,27 +77,35 @@ namespace PlakaUyg
                 Filter = "Video Dosyaları|*.mp4;*.avi;*.mkv;*.mov;*.wmv;*.flv;*.ts|Tüm Dosyalar|*.*"
             };
             if (dlg.ShowDialog() != DialogResult.OK) return;
-            _videoPath = dlg.FileName;
 
+            _videoPath = dlg.FileName;
             if (!_dllReady) InitDll();
             if (_dllReady) OpenVideoSource(_videoPath);
         }
 
-        private void InitDll()
+        private void InitDll(bool silent = false)
         {
             try
             {
                 _dllReady = InitSystem(_detectEng, _ocrEng);
                 lblEngStatus.Text = _dllReady ? "● Motor Aktif" : "● Motor Yüklenemedi";
                 lblEngStatus.ForeColor = _dllReady ? T.Green : T.Red;
-                if (!_dllReady)
+                if (!_dllReady && !silent)
                     Msg("Engine dosyaları yüklenemedi.\nDosya yollarını ⚙ Motor Ayarları'ndan kontrol edin.", MessageBoxIcon.Error);
             }
             catch (DllNotFoundException)
             {
-                Msg("PlateRecognition.dll bulunamadı.\nDLL'i uygulama klasörüne (bin\\x64\\Debug) kopyalayın.", MessageBoxIcon.Error);
+                lblEngStatus.Text = "● Motor Yüklenemedi";
+                lblEngStatus.ForeColor = T.Red;
+                if (!silent)
+                    Msg("PlateRecognition.dll bulunamadı.\nDLL'i uygulama klasörüne (bin\\x64\\Debug) kopyalayın.", MessageBoxIcon.Error);
             }
-            catch (Exception ex) { Msg("Motor hatası: " + ex.Message, MessageBoxIcon.Error); }
+            catch (Exception ex)
+            {
+                lblEngStatus.Text = "● Motor Yüklenemedi";
+                lblEngStatus.ForeColor = T.Red;
+                if (!silent) Msg("Motor hatası: " + ex.Message, MessageBoxIcon.Error);
+            }
         }
 
         private void OpenVideoSource(string path)
@@ -86,6 +117,7 @@ namespace PlakaUyg
                 Msg($"Video açılamadı:\n{path}", MessageBoxIcon.Warning);
                 return;
             }
+
             lblNoCam.Visible = false;
             btnStart.Enabled = false;
             btnStop.Enabled = true;
@@ -107,7 +139,6 @@ namespace PlakaUyg
         // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
         // KARE (FRAME) İŞLEME DÖNGÜSÜ
         // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
         private void Timer_Tick(object? sender, EventArgs e)
         {
             if (_cap == null) return;
@@ -149,33 +180,60 @@ namespace PlakaUyg
                 }
 
                 DrawOverlays(frame);
-
                 var old = pbCam.Image;
                 pbCam.Image = BitmapConverter.ToBitmap(frame);
                 old?.Dispose();
 
-                if (topPlate != null && topPlate != _curPlate)
+                if (topPlate != null)
                 {
-                    _curPlate = topPlate;
+                    // Ardışık aynı okuma sayacı: sonuç bir öncekiyle aynıysa artır,
+                    // farklıysa (yeni bir okuma denemesi) sıfırdan başlat.
+                    if (topPlate == _pendingPlate) _pendingCount++;
+                    else { _pendingPlate = topPlate; _pendingCount = 1; }
 
-                    bool found = _db.PlateExists(topPlate);
-                    bool blacklisted = _db.IsBlacklisted(topPlate);
+                    bool enoughFrames = _pendingCount >= ConfirmFrames;
+                    bool isNewPlate = topPlate != _confirmedPlate;
+                    bool cooldownPassed = DateTime.Now - _lastConfirmAt > ReconfirmCooldown;
 
-                    _db.LogDetection(topPlate, found, blacklisted, "Kamera");
+                    if (enoughFrames && (isNewPlate || cooldownPassed))
+                    {
+                        _confirmedPlate = topPlate;
+                        _lastConfirmAt = DateTime.Now;
+                        _curPlate = topPlate;
 
-                    if (blacklisted)
-                        SetState(topPlate, DetState.Blacklisted);
-                    else
-                        SetState(topPlate, found ? DetState.Found : DetState.NotFound);
+                        bool found = _db.PlateExists(topPlate);
+                        bool blacklisted = _db.IsBlacklisted(topPlate);
+                        _db.LogDetection(topPlate, found, blacklisted, "Kamera");
 
-                    AddLog(topPlate, found);
-                    lstPlates.Invalidate();
+                        if (blacklisted)
+                            SetState(topPlate, DetState.Blacklisted);
+                        else
+                            SetState(topPlate, found ? DetState.Found : DetState.NotFound);
+
+                        AddLog(topPlate, found);
+                        lstPlates.Invalidate();
+
+                        if (found && !blacklisted)
+                        {
+                            var owner = _db.GetPlate(topPlate)?.OwnerName;
+                            ShowApprovalPopup(topPlate, owner);
+                        }
+                    }
                 }
-                else if (topPlate == null && !string.IsNullOrEmpty(_curPlate))
+                else
                 {
-                    _curPlate = "";
-                    SetState("", DetState.Idle);
-                    lstPlates.Invalidate();
+                    // Kare içinde artık plaka yok: bekleyen sayaç ve "aynı plaka" kilidi sıfırlanır,
+                    // böylece aynı plaka daha sonra tekrar görüldüğünde yeniden doğrulanabilir.
+                    _pendingPlate = "";
+                    _pendingCount = 0;
+                    _confirmedPlate = "";
+
+                    if (!string.IsNullOrEmpty(_curPlate))
+                    {
+                        _curPlate = "";
+                        SetState("", DetState.Idle);
+                        lstPlates.Invalidate();
+                    }
                 }
             }
             catch { /* kare hataları sessizce geç */ }
@@ -195,7 +253,6 @@ namespace PlakaUyg
                 int ty = Math.Max(y - 26, 0);
                 int tw = Math.Min(plate.Length * 14 + 14, frame.Width - tx);
                 Cv2.Rectangle(frame, new OpenCvSharp.Rect(tx, ty, tw, 26), boxColor, -1);
-
                 Cv2.PutText(frame, plate, new OpenCvSharp.Point(tx + 6, ty + 18),
                     HersheyFonts.HersheySimplex, 0.72, textColor, 2);
 
