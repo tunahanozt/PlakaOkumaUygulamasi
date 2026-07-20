@@ -177,7 +177,7 @@ namespace PlakaUyg
         }
 
         // ── Arayüz Durum Güncelleyicileri ─────────────────────────────────────
-        private enum DetState { Idle, Found, NotFound, Blacklisted }
+        private enum DetState { Idle, Found, NotFound, Blacklisted, Scanning }
 
         private void SetState(string plate, DetState state)
         {
@@ -204,6 +204,14 @@ namespace PlakaUyg
                     pnlBadge.BackColor = Color.DarkRed;
                     lblBadge.Text = "☠ DİKKAT: KARALİSTEDEKİ ARAÇ!";
                     lblBadge.ForeColor = Color.White;
+                    break;
+                case DetState.Scanning:
+                    // Henüz kesinleşmedi: veritabanına işlenmiyor, sadece kullanıcıya
+                    // "sistem bu aracı fark etti ve okumaya çalışıyor" hissini veriyor.
+                    lblPlate.ForeColor = Color.Orange;
+                    pnlBadge.BackColor = Color.FromArgb(120, 53, 15);
+                    lblBadge.Text = "🔍 Taranıyor...";
+                    lblBadge.ForeColor = Color.Orange;
                     break;
                 default:
                     lblPlate.ForeColor = T.Dim;

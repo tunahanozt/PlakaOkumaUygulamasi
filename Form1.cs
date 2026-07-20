@@ -13,11 +13,11 @@ namespace PlakaUyg
     public partial class Form1 : Form
     {
         // ── DLL bağlantısı ────────────────────────────────────────────────────
-        [DllImport("main.cpp.dll", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        [DllImport("PlakaDLL.dll", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
         private static extern bool InitSystem(string det, string ocr);
-        [DllImport("main.cpp.dll", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        [DllImport("PlakaDLL.dll", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
         private static extern void ProcessFrame(IntPtr data, int w, int h, StringBuilder buf);
-        [DllImport("main.cpp.dll", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        [DllImport("PlakaDLL.dll", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
         private static extern void CleanupSystem();
 
         // ── Çalışma zamanı durumu ─────────────────────────────────────────────
@@ -28,19 +28,17 @@ namespace PlakaUyg
         private bool _dllReady;
         private string _curPlate = "";
         private readonly List<LogEntry> _log = new();
-        private readonly List<(string plate, int x, int y, int w, int h)> _dets = new();
+
+        // DLL artık her tespit için "onaylandı mı?" (confirmed) bilgisini de gönderiyor.
+        // confirmed=true  -> DLL'in kendi araç-takip/oylama sistemi bu plakayı kesinleştirdi.
+        // confirmed=false -> henüz deneniyor; bu SADECE ekranda "taranıyor" göstergesi için kullanılır,
+        //                     veritabanına işlenmez, loglanmaz, pop-up açtırmaz.
+        private readonly List<(string plate, int x, int y, int w, int h, bool confirmed)> _dets = new();
         private string _videoPath = "";
 
-        // ── Okuma doğrulama (stabilizasyon) ────────────────────────────────────
-        // OCR kare kare küçük farklarla okuyabildiği için, bir plakayı "kesinleşti"
-        // sayıp loglamadan/göstermeden önce art arda aynı sonucu birkaç kare
-        // boyunca almasını bekliyoruz. Bu, "deniyor deniyor" şeklindeki gürültülü
-        // tekrar tetiklenmeleri önler.
-        private const int ConfirmFrames = 6;           // kaç ardışık karede aynı okuma gelirse onaylansın
+        private const int MissingGrace = 10; // araç/plaka görünmeden kaç kare beklenip sıfırlanacak
         private static readonly TimeSpan ReconfirmCooldown = TimeSpan.FromSeconds(4); // aynı plaka için tekrar bildirim aralığı
-        private string _pendingPlate = "";
-        private int _pendingCount = 0;
-        private string _confirmedPlate = "";
+        private int _missingStreak = 0;
         private DateTime _lastConfirmAt = DateTime.MinValue;
 
         // Motor (.engine) dosyalarının bulunduğu sabit klasör. Uygulama açılışta
@@ -157,8 +155,12 @@ namespace PlakaUyg
                 var raw = _buf.ToString();
 
                 _dets.Clear();
-                string? topPlate = null;
+                string? topConfirmed = null;
+                string? topPending = null;
 
+                // DLL formatı: "PLAKA:x,y,w,h,C|..." — C = 1 (onaylandı) / 0 (deneniyor).
+                // Metin "..." ise DLL o araç için henüz hiç OCR sonucu üretmedi
+                // (kutu görünür olsun diye yer tutucu gönderiliyor).
                 if (!string.IsNullOrWhiteSpace(raw))
                 {
                     foreach (var entry in raw.Split('|', StringSplitOptions.RemoveEmptyEntries))
@@ -166,73 +168,85 @@ namespace PlakaUyg
                         var ci = entry.IndexOf(':');
                         if (ci < 0) continue;
                         var plateName = entry[..ci];
-                        var coords = entry[(ci + 1)..].Split(',');
-                        if (coords.Length == 4
-                            && int.TryParse(coords[0], out int rx)
-                            && int.TryParse(coords[1], out int ry)
-                            && int.TryParse(coords[2], out int rw)
-                            && int.TryParse(coords[3], out int rh))
+                        var parts = entry[(ci + 1)..].Split(',');
+                        if (parts.Length == 5
+                            && int.TryParse(parts[0], out int rx)
+                            && int.TryParse(parts[1], out int ry)
+                            && int.TryParse(parts[2], out int rw)
+                            && int.TryParse(parts[3], out int rh)
+                            && int.TryParse(parts[4], out int rc))
                         {
-                            _dets.Add((plateName, rx, ry, rw, rh));
-                            topPlate ??= plateName;
+                            bool confirmed = rc == 1;
+                            bool hasText = plateName != "...";
+                            _dets.Add((plateName, rx, ry, rw, rh, confirmed));
+
+                            if (confirmed) topConfirmed ??= plateName;
+                            else if (hasText) topPending ??= plateName;
                         }
                     }
                 }
 
                 DrawOverlays(frame);
+                System.Drawing.Bitmap newImage = BitmapConverter.ToBitmap(frame);
                 var old = pbCam.Image;
                 pbCam.Image = BitmapConverter.ToBitmap(frame);
                 old?.Dispose();
 
-                if (topPlate != null)
+                if (topConfirmed != null)
                 {
-                    // Ardışık aynı okuma sayacı: sonuç bir öncekiyle aynıysa artır,
-                    // farklıysa (yeni bir okuma denemesi) sıfırdan başlat.
-                    if (topPlate == _pendingPlate) _pendingCount++;
-                    else { _pendingPlate = topPlate; _pendingCount = 1; }
+                    _missingStreak = 0;
 
-                    bool enoughFrames = _pendingCount >= ConfirmFrames;
-                    bool isNewPlate = topPlate != _confirmedPlate;
+                    bool isNewPlate = topConfirmed != _curPlate;
                     bool cooldownPassed = DateTime.Now - _lastConfirmAt > ReconfirmCooldown;
 
-                    if (enoughFrames && (isNewPlate || cooldownPassed))
+                    if (isNewPlate || cooldownPassed)
                     {
-                        _confirmedPlate = topPlate;
                         _lastConfirmAt = DateTime.Now;
-                        _curPlate = topPlate;
+                        _curPlate = topConfirmed;
 
-                        bool found = _db.PlateExists(topPlate);
-                        bool blacklisted = _db.IsBlacklisted(topPlate);
-                        _db.LogDetection(topPlate, found, blacklisted, "Kamera");
+                        bool found = _db.PlateExists(topConfirmed);
+                        bool blacklisted = _db.IsBlacklisted(topConfirmed);
+                        _db.LogDetection(topConfirmed, found, blacklisted, "Kamera");
 
                         if (blacklisted)
-                            SetState(topPlate, DetState.Blacklisted);
+                            SetState(topConfirmed, DetState.Blacklisted);
                         else
-                            SetState(topPlate, found ? DetState.Found : DetState.NotFound);
+                            SetState(topConfirmed, found ? DetState.Found : DetState.NotFound);
 
-                        AddLog(topPlate, found);
+                        AddLog(topConfirmed, found);
                         lstPlates.Invalidate();
 
                         if (found && !blacklisted)
                         {
-                            var owner = _db.GetPlate(topPlate)?.OwnerName;
-                            ShowApprovalPopup(topPlate, owner);
+                            var owner = _db.GetPlate(topConfirmed)?.OwnerName;
+                            ShowApprovalPopup(topConfirmed, owner);
                         }
                     }
+                    // else: bu plaka zaten işlendi ve hâlâ kadrajda — tekrar loglama/pop-up yok.
+                }
+                else if (_dets.Count > 0 && string.IsNullOrEmpty(_curPlate))
+                {
+                    // Henüz kesinleşmemiş ama kadrajda en az bir araç/kutu var: kullanıcıya
+                    // "sistem bu aracı fark etti, çalışıyor" hissi vermek için canlı bir
+                    // gösterge. Bu durum veritabanına işlenmez, loglanmaz.
+                    _missingStreak = 0;
+                    var displayText = string.IsNullOrEmpty(topPending) ? "Analiz ediliyor" : topPending;
+                    SetState(displayText, DetState.Scanning);
                 }
                 else
                 {
-                    // Kare içinde artık plaka yok: bekleyen sayaç ve "aynı plaka" kilidi sıfırlanır,
-                    // böylece aynı plaka daha sonra tekrar görüldüğünde yeniden doğrulanabilir.
-                    _pendingPlate = "";
-                    _pendingCount = 0;
-                    _confirmedPlate = "";
-
-                    if (!string.IsNullOrEmpty(_curPlate))
+                    // Kare içinde hiçbir tespit yok. Birkaç kare (grace period) boyunca
+                    // hiç görünmezse her şeyi sıfırla; araç kadraja tekrar girdiğinde
+                    // (aynısı da olsa) temiz bir doğrulama süreci baştan başlasın.
+                    _missingStreak++;
+                    if (_missingStreak >= MissingGrace)
                     {
-                        _curPlate = "";
-                        SetState("", DetState.Idle);
-                        lstPlates.Invalidate();
+                        if (!string.IsNullOrEmpty(_curPlate))
+                        {
+                            _curPlate = "";
+                            SetState("", DetState.Idle);
+                            lstPlates.Invalidate();
+                        }
                     }
                 }
             }
@@ -241,19 +255,32 @@ namespace PlakaUyg
 
         private void DrawOverlays(Mat frame)
         {
-            foreach (var (plate, x, y, w, h) in _dets)
+            foreach (var (plate, x, y, w, h, confirmed) in _dets)
             {
-                bool found = _db.PlateExists(plate);
-                var boxColor = found ? new Scalar(60, 200, 60) : new Scalar(60, 60, 220);
+                Scalar boxColor;
+                if (!confirmed)
+                {
+                    // Henüz onaylanmadı: turuncu/nötr renk, "deneniyor" hissi verir.
+                    boxColor = new Scalar(0, 165, 255);
+                }
+                else
+                {
+                    bool found = _db.PlateExists(plate);
+                    boxColor = found ? new Scalar(60, 200, 60) : new Scalar(60, 60, 220);
+                }
                 var textColor = new Scalar(255, 255, 255);
+                string label;
+                if (plate == "...") label = "TARANIYOR...";
+                else if (confirmed) label = plate;
+                else label = plate + " ...";
 
                 Cv2.Rectangle(frame, new OpenCvSharp.Rect(x, y, w, h), boxColor, 2);
 
                 int tx = x;
                 int ty = Math.Max(y - 26, 0);
-                int tw = Math.Min(plate.Length * 14 + 14, frame.Width - tx);
+                int tw = Math.Min(label.Length * 14 + 14, frame.Width - tx);
                 Cv2.Rectangle(frame, new OpenCvSharp.Rect(tx, ty, tw, 26), boxColor, -1);
-                Cv2.PutText(frame, plate, new OpenCvSharp.Point(tx + 6, ty + 18),
+                Cv2.PutText(frame, label, new OpenCvSharp.Point(tx + 6, ty + 18),
                     HersheyFonts.HersheySimplex, 0.72, textColor, 2);
 
                 int cs = 12;

@@ -11,14 +11,6 @@
       "RelativeMoniker": "D:0:0:{3A26855E-B0C8-44D1-8652-5C1D068A3D51}|PlakaUyg.csproj|solutionrelative:form1.events.cs||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3A26855E-B0C8-44D1-8652-5C1D068A3D51}|PlakaUyg.csproj|c:\\users\\tnhoz\\source\\repos\\plakaokumasistemi\\approvalpopup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3A26855E-B0C8-44D1-8652-5C1D068A3D51}|PlakaUyg.csproj|solutionrelative:approvalpopup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3A26855E-B0C8-44D1-8652-5C1D068A3D51}|PlakaUyg.csproj|c:\\users\\tnhoz\\source\\repos\\plakaokumasistemi\\enginesettingsdialog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3A26855E-B0C8-44D1-8652-5C1D068A3D51}|PlakaUyg.csproj|solutionrelative:enginesettingsdialog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{3A26855E-B0C8-44D1-8652-5C1D068A3D51}|PlakaUyg.csproj|c:\\users\\tnhoz\\source\\repos\\plakaokumasistemi\\theme.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3A26855E-B0C8-44D1-8652-5C1D068A3D51}|PlakaUyg.csproj|solutionrelative:theme.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -46,11 +38,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 3,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\tnhoz\\source\\repos\\PlakaOkumaSistemi\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
@@ -59,38 +51,11 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-07-17T11:33:27.097Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Approvalpopup.cs",
-              "DocumentMoniker": "C:\\Users\\tnhoz\\source\\repos\\PlakaOkumaSistemi\\Approvalpopup.cs",
-              "RelativeDocumentMoniker": "Approvalpopup.cs",
-              "ToolTip": "C:\\Users\\tnhoz\\source\\repos\\PlakaOkumaSistemi\\Approvalpopup.cs",
-              "RelativeToolTip": "Approvalpopup.cs",
-              "ViewState": "AgIAADUAAAAAAAAAAAAmwEkAAAAnAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-18T14:54:55.859Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "EngineSettingsDialog.cs",
-              "DocumentMoniker": "C:\\Users\\tnhoz\\source\\repos\\PlakaOkumaSistemi\\EngineSettingsDialog.cs",
-              "RelativeDocumentMoniker": "EngineSettingsDialog.cs",
-              "ToolTip": "C:\\Users\\tnhoz\\source\\repos\\PlakaOkumaSistemi\\EngineSettingsDialog.cs",
-              "RelativeToolTip": "EngineSettingsDialog.cs",
-              "ViewState": "AgIAAE8AAAAAAAAAAAAwwA4AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-18T14:54:27.95Z",
-              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -100,14 +65,13 @@
               "RelativeDocumentMoniker": "Form1.Events.cs",
               "ToolTip": "C:\\Users\\tnhoz\\source\\repos\\PlakaOkumaSistemi\\Form1.Events.cs",
               "RelativeToolTip": "Form1.Events.cs",
-              "ViewState": "AgIAAO8AAAAAAAAAAAAmwPgAAAAkAAAAAAAAAA==",
+              "ViewState": "AgIAAPcAAAAAAAAAAAAmwAMBAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-18T09:50:54.141Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-18T09:50:54.141Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 4,
               "Title": "Form1.UI.cs",
               "DocumentMoniker": "C:\\Users\\tnhoz\\source\\repos\\PlakaOkumaSistemi\\Form1.UI.cs",
               "RelativeDocumentMoniker": "Form1.UI.cs",
@@ -119,7 +83,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
               "Title": "Theme.cs",
               "DocumentMoniker": "C:\\Users\\tnhoz\\source\\repos\\PlakaOkumaSistemi\\Theme.cs",
               "RelativeDocumentMoniker": "Theme.cs",
@@ -127,12 +91,11 @@
               "RelativeToolTip": "Theme.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-18T09:49:40.31Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-18T09:49:40.31Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 5,
               "Title": "DatabaseService.cs",
               "DocumentMoniker": "C:\\Users\\tnhoz\\source\\repos\\PlakaOkumaSistemi\\DatabaseService.cs",
               "RelativeDocumentMoniker": "DatabaseService.cs",
@@ -150,18 +113,14 @@
               "RelativeDocumentMoniker": "Form1.cs",
               "ToolTip": "C:\\Users\\tnhoz\\source\\repos\\PlakaOkumaSistemi\\Form1.cs",
               "RelativeToolTip": "Form1.cs",
-              "ViewState": "AgIAAOkAAAAAAAAAAAAmwPMAAAA2AAAAAAAAAA==",
+              "ViewState": "AgIAAAYBAAAAAAAAAADwvykBAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-07-17T12:03:10.001Z",
               "EditorCaption": ""
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{56df62a4-05a3-4e5b-aa1a-99371ccfb997}"
-            },
-            {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 6,
               "Title": "Form1.Designer.cs",
               "DocumentMoniker": "C:\\Users\\tnhoz\\source\\repos\\PlakaOkumaSistemi\\Form1.Designer.cs",
               "RelativeDocumentMoniker": "Form1.Designer.cs",
