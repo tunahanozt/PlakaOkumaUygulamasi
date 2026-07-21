@@ -1,0 +1,8 @@
+bin/Release/net8.0-windows/publish/.vs/
+**/bin/
+**/obj/
+.vs/
+bin/
+obj/
+bin/
+obj/

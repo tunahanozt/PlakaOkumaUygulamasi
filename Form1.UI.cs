@@ -8,7 +8,9 @@ namespace PlakaUyg
     {
         // ── Kontroller ────────────────────────────────────────────────────────
         private Label lblEngStatus = null!;
+        private Label lblSourceInfo = null!;
         private Button btnStart = null!;
+        private Button btnLiveCam = null!;
         private Button btnStop = null!;
         private Button btnEngines = null!;
         private PictureBox pbCam = null!;
@@ -76,24 +78,26 @@ namespace PlakaUyg
 
             new Label { Parent = hdr, Text = "◉", ForeColor = T.Accent, Font = new Font("Segoe UI", 20f, FontStyle.Bold), AutoSize = true, Location = new Point(20, 14) };
             new Label { Parent = hdr, Text = "PLAKA TANIMA SİSTEMİ", ForeColor = T.Text, Font = new Font("Segoe UI", 14f, FontStyle.Bold), AutoSize = true, Location = new Point(60, 18) };
-            lblEngStatus = new Label { Parent = hdr, Text = "● Motor Yüklü Değil", ForeColor = T.Red, Font = new Font("Segoe UI", 9.5f, FontStyle.Bold), AutoSize = true, Location = new Point(420, 24) };
+            lblEngStatus = new Label { Parent = hdr, Text = "● Motor Yüklü Değil", ForeColor = T.Red, Font = new Font("Segoe UI", 9.5f, FontStyle.Bold), AutoSize = true, Location = new Point(420, 15) };
+            lblSourceInfo = new Label { Parent = hdr, Text = "", ForeColor = T.Dim, Font = new Font("Segoe UI", 9.5f, FontStyle.Bold), AutoSize = true, Location = new Point(420, 35) };
 
             var pnlHdrButtons = new FlowLayoutPanel
             {
                 Parent = hdr,
                 Dock = DockStyle.Right,
-                Width = 450,
+                Width = 600,
                 FlowDirection = FlowDirection.RightToLeft,
                 Padding = new Padding(0, 15, 20, 0),
                 BackColor = Color.Transparent
             };
 
             btnStop = Btn("■ Durdur", T.Red, 110, 36);
+            btnLiveCam = Btn("📡 Canlı Kamera", T.Green, 160, 36);
             btnStart = Btn("📁 Video Seç", T.Accent, 140, 36);
             btnEngines = Btn("⚙ Motor Ayarları", T.Dim, 160, 36);
             btnStop.Enabled = false;
 
-            pnlHdrButtons.Controls.AddRange(new Control[] { btnStop, btnStart, btnEngines });
+            pnlHdrButtons.Controls.AddRange(new Control[] { btnStop, btnLiveCam, btnStart, btnEngines });
             Controls.Add(hdr);
         }
 

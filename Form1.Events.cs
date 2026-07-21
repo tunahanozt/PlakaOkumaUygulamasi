@@ -20,6 +20,7 @@ namespace PlakaUyg
             };
 
             btnStart.Click += (_, _) => StartPressed();
+            btnLiveCam.Click += (_, _) => StartLivePressed();
             btnStop.Click += (_, _) => StopCamera();
             btnEngines.Click += (_, _) => ShowEngineSettings();
 

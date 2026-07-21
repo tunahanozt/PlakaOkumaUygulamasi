@@ -11,16 +11,24 @@
       "RelativeMoniker": "D:0:0:{3A26855E-B0C8-44D1-8652-5C1D068A3D51}|PlakaUyg.csproj|solutionrelative:form1.events.cs||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{3A26855E-B0C8-44D1-8652-5C1D068A3D51}|PlakaUyg.csproj|c:\\users\\tnhoz\\source\\repos\\plakaokumasistemi\\cameraurldialog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3A26855E-B0C8-44D1-8652-5C1D068A3D51}|PlakaUyg.csproj|solutionrelative:cameraurldialog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3A26855E-B0C8-44D1-8652-5C1D068A3D51}|PlakaUyg.csproj|c:\\users\\tnhoz\\source\\repos\\plakaokumasistemi\\plakauyg.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{3A26855E-B0C8-44D1-8652-5C1D068A3D51}|PlakaUyg.csproj|solutionrelative:plakauyg.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3A26855E-B0C8-44D1-8652-5C1D068A3D51}|PlakaUyg.csproj|c:\\users\\tnhoz\\source\\repos\\plakaokumasistemi\\form1.ui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3A26855E-B0C8-44D1-8652-5C1D068A3D51}|PlakaUyg.csproj|solutionrelative:form1.ui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{3A26855E-B0C8-44D1-8652-5C1D068A3D51}|PlakaUyg.csproj|c:\\users\\tnhoz\\source\\repos\\plakaokumasistemi\\theme.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3A26855E-B0C8-44D1-8652-5C1D068A3D51}|PlakaUyg.csproj|solutionrelative:theme.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3A26855E-B0C8-44D1-8652-5C1D068A3D51}|PlakaUyg.csproj|c:\\users\\tnhoz\\source\\repos\\plakaokumasistemi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3A26855E-B0C8-44D1-8652-5C1D068A3D51}|PlakaUyg.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3A26855E-B0C8-44D1-8652-5C1D068A3D51}|PlakaUyg.csproj|c:\\users\\tnhoz\\source\\repos\\plakaokumasistemi\\form1.ui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3A26855E-B0C8-44D1-8652-5C1D068A3D51}|PlakaUyg.csproj|solutionrelative:form1.ui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3A26855E-B0C8-44D1-8652-5C1D068A3D51}|PlakaUyg.csproj|c:\\users\\tnhoz\\source\\repos\\plakaokumasistemi\\databaseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -38,11 +46,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\tnhoz\\source\\repos\\PlakaOkumaSistemi\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
@@ -59,13 +67,36 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "PlakaUyg",
+              "DocumentMoniker": "C:\\Users\\tnhoz\\source\\repos\\PlakaOkumaSistemi\\PlakaUyg.csproj",
+              "RelativeDocumentMoniker": "PlakaUyg.csproj",
+              "ToolTip": "C:\\Users\\tnhoz\\source\\repos\\PlakaOkumaSistemi\\PlakaUyg.csproj",
+              "RelativeToolTip": "PlakaUyg.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-07-20T10:00:28.658Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Cameraurldialog.cs",
+              "DocumentMoniker": "C:\\Users\\tnhoz\\source\\repos\\PlakaOkumaSistemi\\Cameraurldialog.cs",
+              "RelativeDocumentMoniker": "Cameraurldialog.cs",
+              "ToolTip": "C:\\Users\\tnhoz\\source\\repos\\PlakaOkumaSistemi\\Cameraurldialog.cs",
+              "RelativeToolTip": "Cameraurldialog.cs",
+              "ViewState": "AgIAADAAAAAAAAAAAADwv04AAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-20T07:03:12.437Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
               "Title": "Form1.Events.cs",
               "DocumentMoniker": "C:\\Users\\tnhoz\\source\\repos\\PlakaOkumaSistemi\\Form1.Events.cs",
               "RelativeDocumentMoniker": "Form1.Events.cs",
               "ToolTip": "C:\\Users\\tnhoz\\source\\repos\\PlakaOkumaSistemi\\Form1.Events.cs",
               "RelativeToolTip": "Form1.Events.cs",
-              "ViewState": "AgIAAPcAAAAAAAAAAAAmwAMBAAAiAAAAAAAAAA==",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAnwAoAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-07-18T09:50:54.141Z"
             },
@@ -77,13 +108,13 @@
               "RelativeDocumentMoniker": "Form1.UI.cs",
               "ToolTip": "C:\\Users\\tnhoz\\source\\repos\\PlakaOkumaSistemi\\Form1.UI.cs",
               "RelativeToolTip": "Form1.UI.cs",
-              "ViewState": "AgIAAOsBAAAAAAAAAADwvw4CAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAO8BAAAAAAAAAADwvwcCAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-07-18T09:50:29.279Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "Theme.cs",
               "DocumentMoniker": "C:\\Users\\tnhoz\\source\\repos\\PlakaOkumaSistemi\\Theme.cs",
               "RelativeDocumentMoniker": "Theme.cs",
@@ -95,7 +126,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "DatabaseService.cs",
               "DocumentMoniker": "C:\\Users\\tnhoz\\source\\repos\\PlakaOkumaSistemi\\DatabaseService.cs",
               "RelativeDocumentMoniker": "DatabaseService.cs",
@@ -113,14 +144,14 @@
               "RelativeDocumentMoniker": "Form1.cs",
               "ToolTip": "C:\\Users\\tnhoz\\source\\repos\\PlakaOkumaSistemi\\Form1.cs",
               "RelativeToolTip": "Form1.cs",
-              "ViewState": "AgIAAPIAAAAAAAAAAAAowP8AAAAsAAAAAAAAAA==",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAswDUAAABXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-07-17T12:03:10.001Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "Form1.Designer.cs",
               "DocumentMoniker": "C:\\Users\\tnhoz\\source\\repos\\PlakaOkumaSistemi\\Form1.Designer.cs",
               "RelativeDocumentMoniker": "Form1.Designer.cs",
@@ -128,7 +159,8 @@
               "RelativeToolTip": "Form1.Designer.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-17T11:32:40.162Z"
+              "WhenOpened": "2026-07-17T11:32:40.162Z",
+              "EditorCaption": ""
             }
           ]
         }

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PlakaUyg")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5e19b078ebd2c0ad6b4d929b37d8a9dd7b2caac5")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8ce0023e3d229c0ab9555ec9e97d46b99698fb07")]
 [assembly: System.Reflection.AssemblyProductAttribute("PlakaUyg")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PlakaUyg")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
